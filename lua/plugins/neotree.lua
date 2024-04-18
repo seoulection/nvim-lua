@@ -8,6 +8,6 @@ return {
 		-- "3rd/image.nvim", -- optional image support in preview window
 	},
 	config = function()
-		vim.keymap.set("n", "<C-n>", "<Cmd>Neotree toggle<CR>")
+		vim.keymap.set("n", "<C-n>", "<Cmd>Neotree reveal toggle<CR>")
 	end,
 }
