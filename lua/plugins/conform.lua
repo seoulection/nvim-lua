@@ -24,7 +24,10 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			-- run multiple formatters
-			-- python = { "isort", "black" },
+			javascript = { "prettier", "eslint" },
+			javascriptreact = { "prettier", "eslint" },
+			typescript = { "prettier", "eslint" },
+			typescriptreact = { "prettier", "eslint" },
 
 			-- use a sub-list to run conform until a formatter is found
 			-- javascript = { { "prettierd", "prettier" } },
