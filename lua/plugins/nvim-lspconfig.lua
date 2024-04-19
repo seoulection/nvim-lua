@@ -14,26 +14,8 @@ return {
 				local map = function(keys, func, desc)
 					vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 				end
-
-				-- jump to definition of word under cursor
-				-- <C-t> to jump back
-				map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-
-				-- find references for the word under cursor
-				map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-
-				-- jump to implementation of word under cursor
-				map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-
-				-- jump to type of word under cursor
-				map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
-
-				-- popup docs for word under cursor
 				--  see `:help K`
 				map("K", vim.lsp.buf.hover, "Hover Documentation")
-
-				-- go to declaration for word under cursor
-				-- map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
 				if client and client.server_capabilities.documentHighlightProvider then
