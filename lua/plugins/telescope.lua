@@ -23,6 +23,7 @@ return {
 				mappings = {
 					i = { ["<Esc>"] = require("telescope.actions").close },
 				},
+				path_display = { truncate = 2 },
 			},
 			extensions = {
 				["ui-select"] = {
