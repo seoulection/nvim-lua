@@ -11,6 +11,12 @@ return {
 				return vim.fn.executable("make") == 1
 			end,
 		},
+		{
+			"nvim-telescope/telescope-live-grep-args.nvim",
+			-- This will not install any breaking changes.
+			-- For major updates, this must be adjusted manually.
+			version = "^1.0.0",
+		},
 		{ "nvim-telescope/telescope-ui-select.nvim" },
 
 		-- useful icons, requires nerd font
@@ -31,6 +37,7 @@ return {
 				},
 			},
 		})
+		require("telescope").load_extension("live_grep_args")
 
 		-- enable telescope extensions if they are installed
 		pcall(require("telescope").load_extension, "fzf")
@@ -45,8 +52,18 @@ return {
 		vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
 		vim.keymap.set("n", "<C-i>", builtin.grep_string, { desc = "Search current word" })
 		vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
-		vim.keymap.set("n", "<C-g>", builtin.live_grep, { desc = "Search by grep" })
-		vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
+		vim.keymap.set(
+			"n",
+			"<C-g>",
+			":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+			{ desc = "Search by grep" }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>sg",
+			":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+			{ desc = "[S]earch by [G]rep" }
+		)
 		vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
 		vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
 		vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
