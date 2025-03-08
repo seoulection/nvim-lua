@@ -40,7 +40,6 @@ return {
 			-- clangd = {},
 			-- gopls = {},
 			-- pyright = {},
-			-- rust_analyzer = {},
 			-- ... etc. see `:help lspconfig-all` for a list of all the pre-configured LSPs
 			lexical = {
 				cmd = { "/Users/seoulection/lsp/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
@@ -62,6 +61,15 @@ return {
 						},
 						-- toggling Lua_LS's noisy `missing-fields` warnings
 						-- diagnostics = { disable = { 'missing-fields' } },
+					},
+				},
+			},
+			rust_analyzer = {
+				settings = {
+					["rust-analyzer"] = {
+						diagnostics = {
+							enable = false,
+						},
 					},
 				},
 			},
