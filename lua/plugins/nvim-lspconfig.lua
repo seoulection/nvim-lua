@@ -41,14 +41,8 @@ return {
 			-- gopls = {},
 			-- pyright = {},
 			-- ... etc. see `:help lspconfig-all` for a list of all the pre-configured LSPs
-			lexical = {
-				cmd = { "/Users/seoulection/lsp/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
-				root_dir = function()
-					return vim.loop.cwd()
-				end,
-				filetypes = { "elixir", "eelixir", "heex" },
-				-- optional settings
-				settings = {},
+			elixirls = {
+				cmd = { "/Users/seoulection/lsp/elixir-ls/language_server.sh" },
 			},
 			lua_ls = {
 				-- cmd = {...},

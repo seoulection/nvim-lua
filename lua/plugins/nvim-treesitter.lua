@@ -19,12 +19,8 @@ return {
 		},
 		-- autoinstall languages that are not installed
 		auto_install = true,
-		highlight = {
-			enable = true,
-			-- troubleshooting languages with indenting issues
-			additional_vim_regex_highlighting = { "ruby" },
-		},
-		indent = { enable = true, disable = { "ruby" } },
+		highlight = { enable = true },
+		indent = { enable = true },
 	},
 	config = function(_, opts)
 		-- see `:help nvim-treesitter`

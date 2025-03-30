@@ -22,6 +22,7 @@ return {
 			}
 		end,
 		formatters_by_ft = {
+			elixir = { "mix" },
 			lua = { "stylua" },
 			-- run multiple formatters
 			javascript = { "prettier", "eslint" },
