@@ -3,10 +3,19 @@ return {
 	lazy = false,
 	build = ":TSUpdate",
 	config = function()
-		require("nvim-treesitter").install({ "lua", "rust" })
+    local pattern = {
+      "go",
+      "javascript",
+      "lua",
+      "rust",
+      "tsx",
+      "typescript"
+    }
+
+		require("nvim-treesitter").install(pattern)
 
 		vim.api.nvim_create_autocmd("FileType", {
-			pattern = { "lua", "rust" },
+			pattern = pattern,
 			callback = function()
 				vim.treesitter.start()
 			end,
