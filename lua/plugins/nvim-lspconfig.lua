@@ -8,6 +8,7 @@ return {
 	},
 	config = function()
 		local lsps = {
+			"astro",
 			"lua_ls",
 			"rust_analyzer",
 		}
