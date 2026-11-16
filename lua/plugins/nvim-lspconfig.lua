@@ -11,6 +11,7 @@ return {
 			"astro",
 			"lua_ls",
 			"rust_analyzer",
+			"tsgo",
 		}
 
 		-- initial setup
