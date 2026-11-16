@@ -8,11 +8,11 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				rust = { "rustfmt" },
-				javascript = { "prettier" },
-				javascriptreact = { "prettier" },
-				typescript = { "prettier" },
-				typescriptreact = { "prettier" },
-				astro = { "prettier" },
+				javascript = { "oxfmt" },
+				javascriptreact = { "oxfmt" },
+				typescript = { "oxfmt" },
+				typescriptreact = { "oxfmt" },
+				astro = { "oxfmt" },
 			},
 		})
 
