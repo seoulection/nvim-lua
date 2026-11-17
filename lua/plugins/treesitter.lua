@@ -18,6 +18,7 @@ return {
 			pattern = pattern,
 			callback = function()
 				vim.treesitter.start()
+				vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 			end,
 		})
 	end,
