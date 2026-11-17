@@ -3,14 +3,14 @@ return {
 	lazy = false,
 	build = ":TSUpdate",
 	config = function()
-    local pattern = {
-      "go",
-      "javascript",
-      "lua",
-      "rust",
-      "tsx",
-      "typescript"
-    }
+		local pattern = {
+			"go",
+			"javascript",
+			"lua",
+			"rust",
+			"tsx",
+			"typescript",
+		}
 
 		require("nvim-treesitter").install(pattern)
 
